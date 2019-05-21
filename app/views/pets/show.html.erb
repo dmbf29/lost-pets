@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3><%= @pet.name %></h3>
+      <p class="m-0"><%= @pet.address %></p>
+      <p class="m-0">Found <%= @pet.found_days_ago %> days ago</p>
+      <p class="m-0"><%= @pet.species %></p>
+      <p><% if @pet.dead %>
+        <i class="fas fa-heart-broken"></i>
+      <% else %>
+        <i class="fas fa-heartbeat"></i>
+      <% end %></p>
+      <%= link_to root_path do %>
+        <i class="fas fa-paw"></i>
+      <% end %>
+      <p>
+      <%= link_to "X", pet_path(@pet), method: :delete, 'data': { confirm: "Delete #{@pet.name}?" }  %>
+      </p>
+    </div>
+  </div>
+</div>

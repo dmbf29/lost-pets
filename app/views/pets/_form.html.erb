@@ -1,0 +1,8 @@
+<%= simple_form_for @pet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :date, html_options: {value: Date.today} %>
+  <%= f.input :dead %>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex justify-content-between">
+        <h1>Found Pets</h1>
+        <%= link_to "Add", new_pet_path %>
+      </div>
+      <% @pets.each do |pet| %>
+        <h3><%= link_to pet.name, pet_path(pet) %></h3>
+        <p class="m-0"><%= pet.address %></p>
+        <p class="m-0">Found <%= pet.found_days_ago %> days ago</p>
+        <p class="m-0"><%= pet.species %></p>
+        <% if pet.dead %>
+          <i class="fas fa-heart-broken"></i>
+        <% else %>
+          <i class="fas fa-heartbeat"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
